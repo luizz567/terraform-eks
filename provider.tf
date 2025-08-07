@@ -6,7 +6,7 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "comunidadedevops-terraform-ektes"
+    bucket = "comunidadedevops-terraform-eks"
     key    = "development/terraform.tfstate"
     region = "us-east-1"
   }
