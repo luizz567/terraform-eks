@@ -4,7 +4,7 @@ resource "aws_subnet" "eks_subnet_private_1a" {
   availability_zone_id = data.aws_availability_zones.available.zone_ids[0]
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                              = "${var.project_name}-subnet-private-1a"
       "kubernetes.io/role/internal-elb" = "1"
@@ -18,7 +18,7 @@ resource "aws_subnet" "eks_subnet_private_1b" {
   availability_zone_id = data.aws_availability_zones.available.zone_ids[1]
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name                              = "${var.project_name}-subnet-private-1b"
       "kubernetes.io/role/internal-elb" = "1"
