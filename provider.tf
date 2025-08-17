@@ -15,14 +15,9 @@ terraform {
       version = "3.0.2"
     }
   }
-  backend "s3" {
-    bucket = "comunidadedevops-terraform-eks"
-    key    = "development/terraform.tfstate"
-    region = "us-east-1"
-  }
 }
 provider "aws" {
-  region = "us-east-1"
+  region = var.aws_region
 }
 
 provider "kubernetes" {
